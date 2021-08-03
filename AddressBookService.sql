@@ -22,3 +22,7 @@ insert into AddressBookTable values
 ('Vijay','Kumar','Anna Nagar','Kottaiyam','Kerala',869456,8654973250,'vk@gmail.com')
 
 select * from AddressBookTable
+
+--UC4 Edit contact in table 
+update AddressBookTable set email='shanthi.v@gmail.com' where firstName='Shanthi' and lastName='Venkat'
+update AddressBookTable set city='Madurai' where firstName='Shanthi'
