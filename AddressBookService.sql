@@ -14,3 +14,11 @@ create table AddressBookTable
   phoneNumber bigint,
   email varchar(50)
 )
+
+--UC3-Insert Records into the table
+insert into AddressBookTable values 
+('Soubar','Muthu','K.K.Nagar','Chennai','Tamil Nadu',600007,8642536784,'sou@gmail.com'),
+('Shanthi','Venkat','MGR Nagar','Maduari','Tamil Nadu',625020,9875621552,'shnathi.v@gmail.com'),
+('Vijay','Kumar','Anna Nagar','Kottaiyam','Kerala',869456,8654973250,'vk@gmail.com')
+
+select * from AddressBookTable
