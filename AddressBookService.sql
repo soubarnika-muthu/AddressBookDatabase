@@ -39,3 +39,8 @@ delete from AddressBookTable where firstName='Vijay' and lastName='Kumar'
 select * from AddressBookTable where state='Tamil Nadu' or city='chennai'
 
 select * from AddressBookTable where state = 'Kerala'
+
+--UC7 Calculating the size of the record by state or city
+
+select count(phoneNumber)as NoOfContact,state from AddressBookTable group by state
+select count(phoneNumber) as NoOfContact,city from AddressBookTable group by city
