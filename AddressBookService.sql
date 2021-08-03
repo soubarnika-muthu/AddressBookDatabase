@@ -62,3 +62,47 @@ select count(phoneNumber)as NoOfContact,bookType from AddressBookTable group by 
 --UC11 Adding contact in Two type
 insert into AddressBookTable values ('Vijay','Kumar','Anna Nagar','Kottaiyam','Kerala',869456,9654973250,'vk@gmail.com','Friend')
 select * from AddressBookTable
+
+--UC12 Creating the ER Diagram for the Table
+Create table ContactType 
+(
+ typeId int primary key,
+ typeName varchar(50)
+)
+
+create table ContactAddress
+(
+ contactId int ,
+ typeId int
+)
+
+create table AddressBook
+(
+  personId int identity(1,1) primary key,
+  firstName varchar(100),
+  lastName varchar(100),
+  address varchar(200),
+  city varchar(50),
+  state varchar(100),
+  zipCode bigint,
+  phoneNumber bigint,
+  email varchar(50),
+  typeId int
+)
+--inserting records into the AddressVook
+Insert into AddressBook (firstName,lastName,address,city,state,zipCode,phoneNumber,email) 
+Select firstName,lastName,address,city,state,zipCode,phoneNumber,email from AddressBookTable
+
+Alter table AddressBook drop column typeId
+select * from AddressBook
+
+--Inserting the contact type such as Friends and family, Profession
+insert into ContactType values (1,'Friend'),(2,'Family'),(3,'Profession')
+select * from ContactType
+
+--Inserting the Contact Address that link type and person id
+insert into ContactAddress values(2,2),(3,2),(2,1),(4,1),(5,3)
+select * from ContactAddress
+
+Alter table ContactAddress Add foreign key (contactId) REFERENCES AddressBook(personId)
+Alter table ContactAddress Add foreign key (typeId) REFERENCES ContactType(typeId)
