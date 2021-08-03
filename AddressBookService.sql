@@ -106,3 +106,25 @@ select * from ContactAddress
 
 Alter table ContactAddress Add foreign key (contactId) REFERENCES AddressBook(personId)
 Alter table ContactAddress Add foreign key (typeId) REFERENCES ContactType(typeId)
+
+--UC13 Checking the Retrival 
+--UC6 Retriving record based on City or state
+
+select * from AddressBook where state='Tamil Nadu' or city='chennai'
+
+select * from AddressBook where state = 'Kerala'
+
+--UC7 Calculating the size of the record by state or city
+
+select count(phoneNumber)as NoOfContact,state from AddressBook group by state
+select count(phoneNumber) as NoOfContact,city from AddressBook group by city
+
+--UC8 Retrive Record Base on city sorted order
+select * from AddressBook where city='chennai' order by(lastName)
+select * from AddressBook where state='Tamil Nadu' order by(firstName)
+
+--UC10- count number of person by type
+SELECT count(ContactAddress.contactId) as NoOfContact,ContactType.typeName
+from ContactAddress
+full join ContactType on ContactAddress.typeId=ContactType.typeId
+group by ContactType.typeName
