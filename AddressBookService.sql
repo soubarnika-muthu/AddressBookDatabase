@@ -44,3 +44,7 @@ select * from AddressBookTable where state = 'Kerala'
 
 select count(phoneNumber)as NoOfContact,state from AddressBookTable group by state
 select count(phoneNumber) as NoOfContact,city from AddressBookTable group by city
+
+--UC8 Retrive Record Base on city sorted order
+select * from AddressBookTable where city='chennai' order by(firstName)
+select * from AddressBookTable where state='Tamil Nadu' order by(firstName)
