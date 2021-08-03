@@ -26,3 +26,6 @@ select * from AddressBookTable
 --UC4 Edit contact in table 
 update AddressBookTable set email='shanthi.v@gmail.com' where firstName='Shanthi' and lastName='Venkat'
 update AddressBookTable set city='Madurai' where firstName='Shanthi'
+
+--UC5 Delete the record from table
+delete from AddressBookTable where firstName='Vijay' and lastName='Kumar' 
