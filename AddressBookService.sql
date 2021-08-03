@@ -21,6 +21,10 @@ insert into AddressBookTable values
 ('Shanthi','Venkat','MGR Nagar','Maduari','Tamil Nadu',625020,9875621552,'shnathi.v@gmail.com'),
 ('Vijay','Kumar','Anna Nagar','Kottaiyam','Kerala',869456,8654973250,'vk@gmail.com')
 
+insert into AddressBookTable values 
+('Vetri','Maran','TNagar','Chennai','Tamil Nadu',6000207,9629522931,'vetri@yahoo.com'),
+('Meena','Mohan','Melamadai','Maduari','Tamil Nadu',6250520,9629459258,'meenamohan@gmail.com'),
+('Vijay','Kumar','Anna Nagar','Kottaiyam','Kerala',869456,9654973250,'vk@gmail.com')
 select * from AddressBookTable
 
 --UC4 Edit contact in table 
@@ -29,3 +33,9 @@ update AddressBookTable set city='Madurai' where firstName='Shanthi'
 
 --UC5 Delete the record from table
 delete from AddressBookTable where firstName='Vijay' and lastName='Kumar' 
+
+--UC6 Retriving record based on City or state
+
+select * from AddressBookTable where state='Tamil Nadu' or city='chennai'
+
+select * from AddressBookTable where state = 'Kerala'
